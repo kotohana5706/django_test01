@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <main>
+        <div class="container">
+            <div class="card-panel">
+                <div class="post-content">
+
+                </div>
+                <div class="post-comment">
+                    <h4 style="border-bottom: 1px solid black">댓글</h4>
+                    <form id="comment-form">
+                        <div style="float: left;">
+                            <input type="text" placeholder="댓글을 입력해주세요...">
+                            <input type="submit" value="입력" class="btn waves-effect waves-light">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

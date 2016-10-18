@@ -1,0 +1,13 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 100px;
+}
