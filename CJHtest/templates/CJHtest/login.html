@@ -1,13 +1,17 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="kr">
 <head>
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/main.css' %}"/>
 </head>
 <body>
+    <div class="btn-cancle" onclick="cancle()"><img alt="cancle"></div>
     <form id="login-form" action="">
         <p><label for="form-id">아이디 : </label><input type="text" name="id" id="form-id"></p>
         <p><label for="form-pw">패스워드 :</label><input type="password" name="pw" id="form-pw"></p>
         <div class="action-container">
-            <div><p>로그인에 문제가 있나요?</p></div>
+            <div><p>회원가입</p></div>
             <input type="submit" name="submit" value="로그인">
         </div>
     </form>

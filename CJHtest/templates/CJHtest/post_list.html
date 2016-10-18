@@ -14,28 +14,43 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="sass.html">Blog</a></li>
                 <li><a href="badges.html">About</a></li>
-                <li><a href="#">Login</a></li>
+                <li onclick="login()"><a href="#">Login</a></li>
             </ul>
         </div>
     </nav>
     <main>
-    {%  for post in posts %}
+    <div class="container">
+        {%  for post in posts %}
         <div class="card-panel">
             <p>{{ post.author }}</p>
             <p>{{ post.published_date }}</p>
             <p>{{ post.title }}</p>
         </div>
     {% endfor %}
+    </div>
     </main>
+    <div class="login" style="display: none;">
+        <span class="login-view">
+                <div class="btn-cancel" onclick="cancel()"></div>
+                <form id="login-form" action="">
+                    <p><label for="form-id">아이디 : </label><input type="text" name="id" id="form-id"></p>
+                    <p><label for="form-pw">패스워드 :</label><input type="password" name="pw" id="form-pw"></p>
+                    <div class="action-container">
+                    <div><p>회원가입</p></div>
+                        <input type="submit" name="submit" value="로그인">
+                    </div>
+                </form>
+        </span>
+    </div>
     <footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">드-장고</h5>
+                <p class="grey-text text-lighten-4"><s>노드자스 짱짱</s></p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">링크</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!">Blog</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
@@ -50,6 +65,8 @@
             </div>
           </div>
         </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
 </html>

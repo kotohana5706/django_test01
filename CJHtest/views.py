@@ -5,4 +5,5 @@ def post_list(req):
     posts = Post.objects.all()
     return render(req, 'CJHtest/post_list.html', {'posts': posts})
 def post(req):
-    return render(req, 'CJHtest/post.html', {})
+    posts = Post.objects.all()
+    return render(req, 'CJHtest/post.html', {'posts': posts})
