@@ -36,3 +36,6 @@ main {
 .btn-cancel:hover{
     cursor: pointer;
 }
+.post-text{
+    overflow: hidden;
+}
