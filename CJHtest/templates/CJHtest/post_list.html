@@ -21,7 +21,7 @@
     <div class="container">
         {%  for post in posts %}
         <div class="card-panel">
-            <h5>{{ post.title }}</h5>
+            <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
             <p class="post-text">{{ post.text }}</p>
         </div>
     {% endfor %}
@@ -29,13 +29,25 @@
     </main>
     <div class="login" style="display: none;">
         <span class="login-view">
-                <div class="btn-cancel" onclick="cancel()"></div>
-                <form id="login-form" action="">
+                <div class="btn-cancel" onclick="cancel()">
+                    <img src="{% static 'images/hide_button.png' %}" alt="hide-button">
+                </div>
+                <form method="POST" id="login-form" action="">
+                    <h5>로그인</h5>
                     <p><label for="form-id">아이디 : </label><input type="text" name="id" id="form-id"></p>
                     <p><label for="form-pw">패스워드 :</label><input type="password" name="pw" id="form-pw"></p>
                     <div class="action-container">
-                    <div><p>회원가입</p></div>
-                        <input type="submit" name="submit" value="로그인">
+                        <a class="btn waves-effect waves-light" onclick="sign_up()">회원가입</a>
+                        <input type="submit" name="submit" value="로그인" class="btn waves-effect waves-light">
+                    </div>
+                </form>
+                <form method="POST" id="sign-up" style="display: none;">
+                    <h5>회원가입</h5>
+                    <p><label for="form-id">아이디 : </label><input type="text" name="id" id="form-id"></p>
+                    <p><label for="form-pw">패스워드 :</label><input type="password" name="pw" id="form-pw"></p>
+                    <p><label for="form-pw">이메일 :</label><input type="email" name="email" id="form-email"></p>
+                    <div class="action-container">
+                        <input type="submit" name="submit" value="회원가입" class="btn waves-effect waves-light">
                     </div>
                 </form>
         </span>

@@ -16,15 +16,24 @@
             <div class="card-panel">
                 <div class="post-content">
                     <div class="post-info" style="height: 100px; ">
-                        <h4 style="float: left;">{{ posts.first.title }}</h4>
-                        <h6 style="float: right;">{{ posts.first.author}} {{ posts.first.published_date }}</h6>
+                        <h4 style="float: left;">{{ posts.title }}</h4>
+                        <h6 style="float: right;">{{ posts.author}} {{ posts.published_date }}</h6>
                     </div>
                     <div class="post-text">
-                        {{ posts.first.text }}
+                        {{ posts.text }}
                     </div>
                 </div>
                 <div class="post-comment">
                     <h5 style="border-bottom: 1px solid black">댓글</h5>
+                        <!--{comment list}-->
+                    {% for comment in post.comments.all %}
+                        <div class="comment">
+                            <div class="date">{{ comment.created_date }}</div>
+                            <p>{{ comment.text|linebreaks }}</p>
+                        </div>
+                    {% empty %}
+                        <p>아직 댓글이 없어요 :(</p>
+                    {%  endfor %}
                     <form id="comment-form">
                         <div>
                             <input type="text" placeholder="댓글을 입력해주세요...">

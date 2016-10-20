@@ -30,7 +30,6 @@ main {
 .btn-cancel{
     height: 64px;
     width: 64px;
-    background-color: red;
 }
 
 .btn-cancel:hover{
